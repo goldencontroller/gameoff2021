@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10">
+	<title>New Project</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #80d4ff;stroke-linecap:round;stroke-linejoin:round;stroke-width: 2.5 } 
+	</style>
+	<path id="Shape 1" class="shp0" d="M5 8C3.34 8 2 6.66 2 5C2 3.34 3.34 2 5 2C6.66 2 8 3.34 8 5C8 6.66 6.66 8 5 8Z" />
+</svg>

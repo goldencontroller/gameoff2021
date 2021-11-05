@@ -22,7 +22,13 @@ window.addEventListener("keyup", function(e) { keysDown[e.key] = false; });
 
 function mainGameLoop() {
     if (keysDown.ArrowUp) {
-        playable.movevec(0.69, playable.angle + Math.PI / 2);
+        playable.movevec(0.69, Math.PI / 2 - playable.angle);
+    }
+    if (keysDown.ArrowRight) {
+        playable.angle += 0.069;
+    }
+    if (keysDown.ArrowLeft) {
+        playable.angle -= 0.069;
     }
     requestAnimationFrame(mainGameLoop);
 }

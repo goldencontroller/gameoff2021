@@ -19,6 +19,10 @@ playable.style.mixBlendMode = "screen";
 var keysDown = {};
 window.addEventListener("keydown", function(e) { keysDown[e.key] = true; });
 window.addEventListener("keyup", function(e) { keysDown[e.key] = false; });
+var keyPressed = "";
+window.addEventListener("keypress", function(e) {
+    if (!e.repeat) keyPressed = e.key;
+});
 
 function mainGameLoop() {
     if (keysDown.ArrowUp) {
@@ -30,6 +34,14 @@ function mainGameLoop() {
     if (keysDown.ArrowLeft) {
         playable.angle -= 0.069;
     }
+    if (keyPressed == " ") {
+        var bullet = new daize.sprite(2, 2, playable.x, playable.y, Math.PI / 2 - playable.angle, unit_type);
+        bullet.costume = "graphics/bullet1.svg";
+        canvas.addsprite(bullet);
+        bullet.style.filter = "drop-shadow(0 0 1vh #00AAFF)";
+        bullet.style.mixBlendMode = "screen";
+    }
+    keyPressed = "";
     requestAnimationFrame(mainGameLoop);
 }
 

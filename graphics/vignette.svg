@@ -1,0 +1,13 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+	<title>New Project</title>
+	<defs>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="flt1"> <feGaussianBlur stdDeviation="240" /> </filter>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #000000 } 
+		.shp1 { filter: url(#flt1);fill: #ffffff } 
+	</style>
+	<path id="Layer 1" class="shp0" d="M0 0L1920 0L1920 1080L0 1080L0 0Z" />
+	<path id="Shape 1" class="shp1" d="M960 1188C322.94 1188 -192 898.34 -192 540C-192 181.66 322.94 -108 960 -108C1597.06 -108 2112 181.66 2112 540C2112 898.34 1597.06 1188 960 1188Z" />
+</svg>

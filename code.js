@@ -21,6 +21,8 @@ window.addEventListener("keydown", function(e) { keysDown[e.key] = true; });
 window.addEventListener("keyup", function(e) { keysDown[e.key] = false; });
 var spaceHeld = false;
 
+var bullets = [];
+
 function mainGameLoop() {
     if (keysDown.ArrowUp) {
         playable.movevec(0.69, Math.PI / 2 - playable.angle);
@@ -38,8 +40,16 @@ function mainGameLoop() {
         bullet.style.filter = "drop-shadow(0 0 1vh #00AAFF)";
         bullet.style.mixBlendMode = "screen";
         spaceHeld = true;
+        bullets.push(bullet);
     }
     if (!keysDown[" "]) spaceHeld = false;
+
+    for (var bullet of bullets) {
+        bullet.movevec(1, bullet.angle);
+        if (bullet.x < 0 || bullet.x > 160) bullet.angle = Math.PI - bullet.angle;
+        if (bullet.y < 0 || bullet.y > 100) bullet.angle *= -1;
+    }
+
     requestAnimationFrame(mainGameLoop);
 }
 

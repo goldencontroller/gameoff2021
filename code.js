@@ -10,7 +10,7 @@ vignette_layer.layer = 696969;
 vignette_layer.style.mixBlendMode = "multiply";
 canvas.addsprite(vignette_layer);
 
-var playable = new daize.sprite(10, 10, 50, 50, 0, unit_type);
+var playable = new daize.sprite(10, 10, 80, 60, 0, unit_type);
 playable.costume = "graphics/bug1.svg";
 canvas.addsprite(playable);
 playable.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";

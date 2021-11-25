@@ -93,8 +93,6 @@ function mainGameLoop() {
         }
     }
 
-    if (Object.keys(keysDown).length > 0) instuctionsLabel.visibility = 0;
-
     if (notYetBored) requestAnimationFrame(mainGameLoop);
 }
 
@@ -104,6 +102,8 @@ function onGameStart() {
     // https://www.beepbox.co/#9n31s0k4l00e03t2ma7g0fj07r1i0o432T3v1u03f0qwx10n511d08SU005040woo22190E3bi0706T1v1u9af0q0z10t531d08AcF8BeQ0259PffffE6b160861562463378T0v1ue6f0q0y10ob3d4aw5h2E1b5T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1zIQvaiCkQu3hB9QPBkpukPBkpiBcVl000000
     playLoop("sounds/BeepBox-Song.wav");
     window.removeEventListener("keypress", onGameStart);
+
+    instuctionsLabel.visibility = 0;
 }
 window.addEventListener("keypress", onGameStart);
 

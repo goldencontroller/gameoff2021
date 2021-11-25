@@ -41,6 +41,7 @@ window.addEventListener("keyup", function(e) { keysDown[e.key] = false; });
 var spaceHeld = false;
 
 var bullets = [];
+var notYetBored = true;
 
 function mainGameLoop() {
     if (keysDown.ArrowUp) {
@@ -56,6 +57,7 @@ function mainGameLoop() {
         var bullet = new daize.sprite(2, 2, playable.x, playable.y, Math.PI / 2 - playable.angle, unit_type);
         bullet.costume = "graphics/bullet1.svg";
         canvas.addsprite(bullet);
+        bullet.movevec(5, bullet.angle);
         bullet.style.filter = "drop-shadow(0 0 1vh #00AAFF)";
         bullet.style.mixBlendMode = "screen";
         spaceHeld = true;
@@ -69,11 +71,15 @@ function mainGameLoop() {
         bullet.movevec(1, bullet.angle);
         if (bullet.x < 0 || bullet.x > 160) bullet.angle = Math.PI - bullet.angle;
         if (bullet.y < 0 || bullet.y > 100) bullet.angle *= -1;
+        if (Math.pow(bullet.x - playable.x, 2) + Math.pow(bullet.y - playable.y, 2) < Math.pow(5, 2)) {
+            // lose
+            notYetBored = false;
+        }
     }
 
     if (Object.keys(keysDown).length > 0) instuctionsLabel.visibility = 0;
 
-    requestAnimationFrame(mainGameLoop);
+    if (notYetBored) requestAnimationFrame(mainGameLoop);
 }
 
 mainGameLoop();

@@ -82,6 +82,7 @@ function mainGameLoop() {
         if (Math.pow(bullet.x - playable.x, 2) + Math.pow(bullet.y - playable.y, 2) < Math.pow(5, 2)) {
             // lose
             notYetBored = false;
+            loseSequence();
         }
     }
 
@@ -91,3 +92,16 @@ function mainGameLoop() {
 }
 
 mainGameLoop();
+
+function loseSequence() {
+    var loseLabel = new daize.sprite(100, 20, 80, 50, 0, unit_type);
+    loseLabel.layer = 696969;
+    canvas.addsprite(loseLabel);
+    loseLabel.innerText = "You lose";
+    loseLabel.style.color = "#ff8080";
+    loseLabel.style.mixBlendMode = "screen";
+    loseLabel.style.fontSize = "20" + unit_type;
+    loseLabel.style.fontFamily = "monospace";
+    loseLabel.style.filter = "drop-shadow(0 0 0.5vh #FF0000) drop-shadow(0 0 2vh #FF0000)";
+    loseLabel.style.userSelect = "none";
+}

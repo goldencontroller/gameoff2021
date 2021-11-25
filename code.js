@@ -111,7 +111,7 @@ function loseSequence() {
     var loseLabel = new daize.sprite(100, 20, 80, 50, 0, unit_type);
     loseLabel.layer = 696969;
     canvas.addsprite(loseLabel);
-    loseLabel.innerText = "You lose";
+    loseLabel.innerText = "GAME OVER";
     loseLabel.style.color = "#ff8080";
     loseLabel.style.mixBlendMode = "screen";
     loseLabel.style.fontSize = "20" + unit_type;

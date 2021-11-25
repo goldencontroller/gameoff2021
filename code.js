@@ -108,7 +108,7 @@ function onGameStart() {
 window.addEventListener("keydown", onGameStart);
 
 function loseSequence() {
-    var loseLabel = new daize.sprite(100, 20, 80, 50, 0, unit_type);
+    var loseLabel = new daize.sprite(140, 20, 80, 50, 0, unit_type);
     loseLabel.layer = 696969;
     canvas.addsprite(loseLabel);
     loseLabel.innerText = "GAME OVER";

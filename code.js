@@ -24,6 +24,7 @@ instuctionsLabel.style.color = "white";
 instuctionsLabel.style.fontSize = "1.69" + unit_type;
 instuctionsLabel.style.fontFamily = "monospace";
 instuctionsLabel.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
+instuctionsLabel.style.userSelect = "none";
 
 var score = 0;
 var scoreLabel = new daize.sprite(25, 5, 140, 10, 0, unit_type);
@@ -34,6 +35,7 @@ scoreLabel.style.color = "white";
 scoreLabel.style.fontSize = "4" + unit_type;
 scoreLabel.style.fontFamily = "monospace";
 scoreLabel.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
+scoreLabel.style.userSelect = "none";
 
 var keysDown = {};
 window.addEventListener("keydown", function(e) { keysDown[e.key] = true; });

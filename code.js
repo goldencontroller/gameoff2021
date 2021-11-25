@@ -104,4 +104,14 @@ function loseSequence() {
     loseLabel.style.fontFamily = "monospace";
     loseLabel.style.filter = "drop-shadow(0 0 0.5vh #FF0000) drop-shadow(0 0 2vh #FF0000)";
     loseLabel.style.userSelect = "none";
+
+    var retry = new daize.sprite(20, 20, 80, 69, 0, unit_type);
+    retry.costume = "graphics/retrybutton.svg";
+    retry.layer = 696969;
+    canvas.addsprite(retry);
+    retry.style.mixBlendMode = "screen";
+    retry.style.fontSize = "20" + unit_type;
+    retry.style.fontFamily = "monospace";
+    retry.style.filter = "drop-shadow(0 0 0.5vh #FF0000) drop-shadow(0 0 2vh #FF0000)";
+    retry.addEventListener("click", function(e) { location.reload(); });
 }

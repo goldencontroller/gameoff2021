@@ -16,7 +16,7 @@ canvas.addsprite(playable);
 playable.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
 playable.style.mixBlendMode = "screen";
 
-var instuctionsLabel = new daize.sprite(10, 10, 10, 10, 0, unit_type);
+var instuctionsLabel = new daize.sprite(10, 10, 80, 50, 0, unit_type);
 instuctionsLabel.layer = 696969;
 canvas.addsprite(instuctionsLabel);
 instuctionsLabel.innerText = "Arrow keys to move, space to shoot";

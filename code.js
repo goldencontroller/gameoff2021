@@ -58,6 +58,8 @@ function mainGameLoop() {
         if (bullet.x < 0 || bullet.x > 160) bullet.angle = Math.PI - bullet.angle;
         if (bullet.y < 0 || bullet.y > 100) bullet.angle *= -1;
     }
+    
+    if (Object.keys(keysDown).length > 0) instuctionsLabel.visibility = 0;
 
     requestAnimationFrame(mainGameLoop);
 }

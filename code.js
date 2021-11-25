@@ -16,6 +16,15 @@ canvas.addsprite(playable);
 playable.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
 playable.style.mixBlendMode = "screen";
 
+var instuctionsLabel = new daize.sprite(10, 10, 10, 10, 0, unit_type);
+instuctionsLabel.layer = 696969;
+canvas.addsprite(instuctionsLabel);
+instuctionsLabel.innerText = "Arrow keys to move, space to shoot";
+instuctionsLabel.style.color = "white";
+instuctionsLabel.style.fontSize = "1.69" + unit_type;
+instuctionsLabel.style.fontFamily = "monospace";
+instuctionsLabel.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
+
 var keysDown = {};
 window.addEventListener("keydown", function(e) { keysDown[e.key] = true; });
 window.addEventListener("keyup", function(e) { keysDown[e.key] = false; });

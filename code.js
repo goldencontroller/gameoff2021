@@ -72,13 +72,20 @@ function mainGameLoop() {
         bullets.push(bullet);
         score++;
         scoreLabel.innerText = "SCORE: " + score.toString();
+        playSound("sounds/shoot.wav");
     }
     if (!keysDown[" "]) spaceHeld = false;
 
     for (var bullet of bullets) {
         bullet.movevec(1, bullet.angle);
-        if (bullet.x < 0 || bullet.x > 160) bullet.angle = Math.PI - bullet.angle;
-        if (bullet.y < 0 || bullet.y > 100) bullet.angle *= -1;
+        if (bullet.x < 0 || bullet.x > 160) {
+            bullet.angle = Math.PI - bullet.angle;
+            playSound("sounds/bounce.wav");
+        }
+        if (bullet.y < 0 || bullet.y > 100) {
+            bullet.angle *= -1;
+            playSound("sounds/bounce.wav");
+        }
         if (Math.pow(bullet.x - playable.x, 2) + Math.pow(bullet.y - playable.y, 2) < Math.pow(5, 2)) {
             // lose
             notYetBored = false;
@@ -114,4 +121,6 @@ function loseSequence() {
     retry.style.fontFamily = "monospace";
     retry.style.filter = "drop-shadow(0 0 0.5vh #FF0000) drop-shadow(0 0 2vh #FF0000)";
     retry.addEventListener("click", function(e) { location.reload(); });
+
+    playSound("sounds/death.wav");
 }

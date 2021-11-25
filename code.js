@@ -99,7 +99,11 @@ function mainGameLoop() {
 }
 
 mainGameLoop();
-playLoop("sounds/BeepBox-Song.wav");
+function onGameStart() {
+    playLoop("sounds/BeepBox-Song.wav");
+    window.removeEventListener("keypress", onGameStart);
+}
+window.addEventListener("keypress", onGameStart);
 
 function loseSequence() {
     var loseLabel = new daize.sprite(100, 20, 80, 50, 0, unit_type);

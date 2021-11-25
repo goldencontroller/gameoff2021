@@ -50,6 +50,10 @@ var notYetBored = true;
 function mainGameLoop() {
     if (keysDown.ArrowUp) {
         playable.movevec(0.69, Math.PI / 2 - playable.angle);
+        if (playable.x < 0) playable.x = 160;
+        if (playable.x > 160) playable.x = 0;
+        if (playable.y < 0) playable.y = 100;
+        if (playable.y > 100) playable.y = 0;
     }
     if (keysDown.ArrowRight) {
         playable.angle += 0.069;

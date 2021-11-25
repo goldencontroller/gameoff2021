@@ -25,6 +25,16 @@ instuctionsLabel.style.fontSize = "1.69" + unit_type;
 instuctionsLabel.style.fontFamily = "monospace";
 instuctionsLabel.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
 
+var score = 0;
+var scoreLabel = new daize.sprite(25, 5, 140, 10, 0, unit_type);
+scoreLabel.layer = 696969;
+canvas.addsprite(scoreLabel);
+scoreLabel.innerText = "SCORE: " + score.toString();
+scoreLabel.style.color = "white";
+scoreLabel.style.fontSize = "4" + unit_type;
+scoreLabel.style.fontFamily = "monospace";
+scoreLabel.style.filter = "drop-shadow(0 0 0.5vh #00AAFF) drop-shadow(0 0 2vh #00AAFF)";
+
 var keysDown = {};
 window.addEventListener("keydown", function(e) { keysDown[e.key] = true; });
 window.addEventListener("keyup", function(e) { keysDown[e.key] = false; });
@@ -50,6 +60,8 @@ function mainGameLoop() {
         bullet.style.mixBlendMode = "screen";
         spaceHeld = true;
         bullets.push(bullet);
+        score++;
+        scoreLabel.innerText = "SCORE: " + score.toString();
     }
     if (!keysDown[" "]) spaceHeld = false;
 
@@ -58,7 +70,7 @@ function mainGameLoop() {
         if (bullet.x < 0 || bullet.x > 160) bullet.angle = Math.PI - bullet.angle;
         if (bullet.y < 0 || bullet.y > 100) bullet.angle *= -1;
     }
-    
+
     if (Object.keys(keysDown).length > 0) instuctionsLabel.visibility = 0;
 
     requestAnimationFrame(mainGameLoop);
